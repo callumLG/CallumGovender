@@ -6,7 +6,7 @@ function Navbar() {
       <div>
         {/* Logo or Brand Name */}
 
-        <h1 className="font-bold text-[20px] hover:text-indigo-300 transition duration-300 ease-in-out">
+        <h1 className="font-bold text-[20px] text-white hover:text-indigo-300 transition duration-300 ease-in-out">
           CLG
         </h1>
       </div>
