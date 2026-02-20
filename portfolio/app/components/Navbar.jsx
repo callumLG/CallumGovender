@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <nav className="flex justify-between items-center p-4 max-w-6xl mx-auto top-0 z-50">
+    <nav className="flex justify-between items-center p-4 max-w-6xl mx-auto top-0 z-50  fixed right-0 left-0 bg-opacity-90 backdrop-blur-sm">
       <div>
         {/* Logo or Brand Name */}
 

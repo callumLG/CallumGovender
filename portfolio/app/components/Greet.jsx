@@ -2,8 +2,8 @@ import React from "react";
 
 function Greet() {
   return (
-    <div className="text-center  my-50 flex flex-col gap-4">
-      <h1 className="text-7xl font-bold text-white">Callum Govender</h1>
+    <div className="text-center  my-62.5 lg:my-87.5 flex flex-col gap-4 tracking-tight">
+      <h1 className="text-7xl font-bold text-white ">Callum Govender</h1>
       <p className="text-2xl text-gray-300 mt-4">
         Junior Web Developer / Frontend Developer
       </p>
