@@ -48,14 +48,26 @@ const skills = [
 function Skills() {
   return (
     <div>
-      <div className="mx-auto bg-[#111111]">
-        <h1 className="text-5xl font-bold text-center text-white">Skills</h1>
+      <div className="mx-auto bg-[#111111] text-white">
+        <h1 className="text-5xl font-bold text-center ">Skills</h1>
         <div>
-          <div className="text-white bg-black ">
-            <Code className="text-[#A8C5E8] text-2xl inline-block" />
-            <h2>HTML & CSS</h2>
-            <p>Semantic HTML, modern CSS, Flexbox, Grid, and clean layouts</p>
-          </div>
+          {skills.map((skill) => {
+            const Icon = skill.icon;
+            return (
+              <div
+                key={skill.name}
+                className="p-6 sm:p-7 md:p-8 rounded-lg bg-[#0B0B0B] border border-[#222222] hover:border-[#A8C5E8] transition-colors duration-300 group"
+              >
+                <Icon className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 mb-3 sm:mb-4 text-[#A8C5E8] group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">
+                  {skill.name}
+                </h3>
+                <p className="text-sm sm:text-base opacity-80 leading-relaxed">
+                  {skill.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
