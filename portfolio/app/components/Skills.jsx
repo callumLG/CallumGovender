@@ -46,7 +46,7 @@ const skills = [
 ];
 function Skills() {
   return (
-    <div className="mx-auto bg-[#111111] text-white py-24">
+    <div id="skills" className="mx-auto bg-[#111111] text-white py-24">
       <div
         className="max-w-6xl mx-auto
 "
