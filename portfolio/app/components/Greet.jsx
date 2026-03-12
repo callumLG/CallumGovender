@@ -15,7 +15,7 @@ function Greet() {
         </button>
         <a
           href="/callum-govenderCV.docx"
-          download="callum-govenderCV.docx"
+          download="callum-govenderCV(1).docx"
           className="text-[#F5A3A3] w-50 border-2 rounded-lg py-3  hover:bg-[#F5A3A3] hover:text-black transition duration-300 inline-block"
         >
           CV

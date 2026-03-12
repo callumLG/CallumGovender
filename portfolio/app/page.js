@@ -5,6 +5,7 @@ import Greet from "./components/Greet";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
+import Projects from "./components/Projects";
 
 import { useEffect } from "react";
 
@@ -44,6 +45,7 @@ export default function Home() {
       <Greet />
       <About />
       <Skills />
+      <Projects />
       <Contact />
     </>
   );
