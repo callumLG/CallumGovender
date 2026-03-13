@@ -8,37 +8,63 @@ function Contact() {
     name: "",
     email: "",
     message: "",
+    company: "",
+    website: "",
   });
 
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState({
+    type: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setLoading(true);
+    setStatus({ type: "", message: "" });
 
     try {
-      // For now just simulate sending
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      console.log("Form Submitted:", formData);
+      const data = await res.json();
 
-      alert("Message sent successfully!");
+      if (!res.ok) {
+        throw new Error(data.message || "Failed to send message.");
+      }
+
+      setStatus({
+        type: "success",
+        message: data.message || "Message sent successfully.",
+      });
 
       setFormData({
         name: "",
         email: "",
         message: "",
+        company: "",
+        website: "",
       });
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Something went wrong.");
+      setStatus({
+        type: "error",
+        message: error.message || "Something went wrong. Please try again.",
+      });
     } finally {
       setLoading(false);
     }
@@ -52,7 +78,6 @@ function Contact() {
       <h1 className="text-5xl font-bold text-center mb-12">Contact</h1>
 
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-        {/* Left Side */}
         <div>
           <p className="text-gray-300 mb-6">
             I'm currently open to new opportunities and collaborations. Whether
@@ -68,8 +93,34 @@ function Contact() {
           </a>
         </div>
 
-        {/* Right Side Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Honeypot fields */}
+          <div className="hidden">
+            <label htmlFor="company">Company</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+              autoComplete="off"
+              tabIndex="-1"
+            />
+          </div>
+
+          <div className="hidden">
+            <label htmlFor="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              autoComplete="off"
+              tabIndex="-1"
+            />
+          </div>
+
           <div>
             <label htmlFor="name" className="block mb-2 text-sm">
               Name
@@ -118,11 +169,21 @@ function Contact() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-6 py-3 rounded-lg bg-[#A8C5E8] text-[#0B0B0B] hover:bg-[#8FB3D9] transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50"
+            className="w-full px-6 py-3 rounded-lg bg-[#A8C5E8] text-[#0B0B0B] hover:bg-[#8FB3D9] transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Sending..." : "Send Message"}
             <Send className="w-4 h-4" />
           </button>
+
+          {status.message && (
+            <p
+              className={`text-sm ${
+                status.type === "success" ? "text-green-400" : "text-red-400"
+              }`}
+            >
+              {status.message}
+            </p>
+          )}
         </form>
       </div>
     </section>
