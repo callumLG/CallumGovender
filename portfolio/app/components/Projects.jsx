@@ -16,6 +16,15 @@ const projects = [
     image: "/maze_game/maze_game.png",
     tags: ["React", "tailwindcss", "typescript"],
     github: "https://github.com/callumLG/mazegamep1",
+    demo: "mazegamep1.vercel.app",
+  },
+  {
+    title: "Demo Project",
+    description: "A demo site to showcase my seo skills",
+    image: "/demoSite/demoSite.png",
+    tags: ["javascript", "html", "css"],
+    github: "https://github.com/callumLG/react-food-distribution-website",
+    demo: "react-food-distribution-website.vercel.app",
   },
 ];
 
@@ -42,11 +51,11 @@ function Projects() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-5 sm:p-6 flex flex-col flex-grow">
+              <div className="p-5 sm:p-6 flex flex-col grow">
                 <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
                   {project.title}
                 </h3>
-                <p className="text-sm sm:text-base opacity-80 mb-4 leading-relaxed flex-grow">
+                <p className="text-sm sm:text-base opacity-80 mb-4 leading-relaxed grow">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
@@ -67,13 +76,13 @@ function Projects() {
                     <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     GitHub
                   </a>
-                  {/* <a
+                  <a
                     href={project.demo}
                     className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg bg-[#F5A3A3] text-[#0B0B0B] hover:bg-[#E89393] transition-colors duration-200 text-sm sm:text-base"
                   >
                     <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     Demo
-                  </a> */}
+                  </a>
                 </div>
               </div>
             </div>
