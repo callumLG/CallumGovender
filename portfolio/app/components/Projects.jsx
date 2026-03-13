@@ -16,7 +16,7 @@ const projects = [
     image: "/maze_game/maze_game.png",
     tags: ["React", "tailwindcss", "typescript"],
     github: "https://github.com/callumLG/mazegamep1",
-    demo: "mazegamep1.vercel.app",
+    demo: "https://mazegamep1.vercel.app",
   },
   {
     title: "Demo Project",
@@ -24,7 +24,7 @@ const projects = [
     image: "/demoSite/demoSite.png",
     tags: ["javascript", "html", "css"],
     github: "https://github.com/callumLG/react-food-distribution-website",
-    demo: "react-food-distribution-website.vercel.app",
+    demo: "https://react-food-distribution-website.vercel.app",
   },
 ];
 
@@ -71,18 +71,24 @@ function Projects() {
                 <div className="flex gap-2 sm:gap-3">
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg border border-[#A8C5E8] text-[#A8C5E8] hover:bg-[#A8C5E8] hover:text-[#0B0B0B] transition-colors duration-200 text-sm sm:text-base"
                   >
                     <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     GitHub
                   </a>
-                  <a
-                    href={project.demo}
-                    className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg bg-[#F5A3A3] text-[#0B0B0B] hover:bg-[#E89393] transition-colors duration-200 text-sm sm:text-base"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    Demo
-                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg bg-[#F5A3A3] text-[#0B0B0B] hover:bg-[#E89393] transition-colors duration-200 text-sm sm:text-base"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
