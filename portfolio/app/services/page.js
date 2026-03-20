@@ -1,3 +1,5 @@
+import Soon from "../components/Soon";
+
 export default function Services() {
-  return <div className="text-white">Services Page</div>;
+  return <Soon />;
 }

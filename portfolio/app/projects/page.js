@@ -1,3 +1,5 @@
+import Soon from "../components/Soon";
+
 export default function Projects() {
-  return <div className="text-white">Project Page</div>;
+  return <Soon />;
 }
