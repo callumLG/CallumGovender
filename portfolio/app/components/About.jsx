@@ -14,7 +14,7 @@ function About() {
   return (
     <div
       id="about"
-      className="w-full text-white tracking-tight mx-auto my-40 flex flex-col items-center gap-4 max-w-3xl text-center"
+      className="w-full h-[70vh] text-white tracking-tight mx-auto my-40 flex flex-col items-center gap-4 max-w-3xl text-center"
     >
       <h1 className="text-5xl font-bold mb-12 text-center">About Me</h1>
       <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -27,15 +27,16 @@ function About() {
         </p>
 
         <div className="flex gap-5">
-          <Image
-            src="/avitar.avif"
+          {/* <Image
+            src="/avatar.avif"
             alt="avitar"
             width={200}
             height={200}
             className="w-50  lg:w-100  rounded-full ml-4 border-2 border-gray-800 "
-          />
+          /> */}
           {/* links */}
-          <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 lg:flex-col">
+          <div className="flex md:flex-col items-center py-12 justify-center gap-3 sm:gap-4 lg:flex-col">
+            <h3 className="font-bold text-2xl">My links:</h3>
             <a
               href="https://www.linkedin.com/in/callum-govender-027a9b29a/"
               target="_blank"
@@ -64,7 +65,7 @@ function About() {
           </div>
         </div>
       </div>
-      <div className="px-4 py-8">
+      <div className="mt-17 px-4 py-8">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
           My Tech Stack
         </h2>
