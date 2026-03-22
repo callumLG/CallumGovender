@@ -89,11 +89,7 @@ function Projects() {
       <div className="max-w-6xl mx-auto">
         <h2 className="flex items-center justify-center text-3xl sm:text-4xl md:text-5xl font-bold mb-12 sm:mb-16 text-center gap-2">
           Projects
-          <Link
-            href="/projects"
-            className="ml-2"
-            aria-label="View all projects"
-          >
+          <Link className="ml-2" aria-label="View all projects">
             <MoveRight className="hover:text-[#A8C5E8] transition-colors duration-200 w-8 h-8" />
           </Link>
         </h2>
