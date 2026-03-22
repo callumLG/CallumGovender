@@ -8,6 +8,16 @@ html {
   scroll-behavior: smooth;
 }
 
+.sxs {
+  display: hidden;
+}
+
+@media (min-width: 425px) {
+  .sxs {
+    width: 100vw;
+    display: block;
+  }
+}
 @keyframes planeFall {
   0% {
     transform: translate3d(0, 0, 0) rotate(var(--rotate-start)) scale(0.9);

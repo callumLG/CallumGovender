@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { ExternalLink, Github, MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -77,7 +78,9 @@ function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-2 sm:gap-3">
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.8 }}
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -85,9 +88,11 @@ function Projects() {
                   >
                     <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     GitHub
-                  </a>
+                  </motion.a>
                   {project.demo && (
-                    <a
+                    <motion.a
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.8 }}
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -95,7 +100,7 @@ function Projects() {
                     >
                       <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       Demo
-                    </a>
+                    </motion.a>
                   )}
                 </div>
               </div>

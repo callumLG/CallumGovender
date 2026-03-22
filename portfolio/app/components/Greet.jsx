@@ -39,7 +39,7 @@ function Greet() {
         <a href="#projects">
           <motion.button
             whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.5 }}
+            whileTap={{ scale: 0.8 }}
             className="text-[#A8C5E8] w-fit md:w-50 flex px-2 border-2 rounded-lg py-3 hover:bg-[#A8C5E8] hover:text-black transition duration-300 cursor-pointer justify-center gap-1"
           >
             View Projects
@@ -49,7 +49,7 @@ function Greet() {
         <a href="/callumGovenderCV.docx" download="callumGovenderCV.docx">
           <motion.button
             whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.5 }}
+            whileTap={{ scale: 0.8 }}
             className="cursor-pointer text-[#F5A3A3] w-fit md:w-50 px-5 border-2 rounded-lg py-3  hover:bg-[#F5A3A3] hover:text-black transition duration-300 inline-block"
           >
             CV
